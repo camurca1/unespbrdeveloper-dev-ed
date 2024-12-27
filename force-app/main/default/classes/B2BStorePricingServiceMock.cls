@@ -38,7 +38,7 @@ public class B2BStorePricingServiceMock {
             HttpResponse response = new HttpResponse();
             response.setHeader('Content-Type', 'application/json');
             response.setStatusCode(200);
-            response.setBody('{"pricebooks": [{"client_code": "CLC-Test","products": [{"sku": "SKU-Test","list_price": 60,"sales_price": 45}]}]}');
+            response.setBody('{"pricebooks": [{"client_code": "CLC-Test","products": [{"sku": "SKU-Test","list_price": 60,"sales_price": 45},{"client_code": "CLC-Test2","products": [{"sku": "SKU-Test","list_price": 80,"sales_price": 55}]}]}');
     
             return response; 
         }
