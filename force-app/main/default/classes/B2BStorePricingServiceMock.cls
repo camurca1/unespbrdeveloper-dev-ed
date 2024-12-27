@@ -11,7 +11,7 @@ public class B2BStorePricingServiceMock {
     private CalloutSetting__mdt getCalloutSettings(){
         CalloutSetting__mdt settings = CalloutSetting__mdt.getInstance(calloutName);
         
-        System.assertNotEquals(null, settings);
+        System.assertNotEquals(null, settings, 'CalloutSetting__mdt settings are missing for ' + calloutName);
         
         return settings;
     }
