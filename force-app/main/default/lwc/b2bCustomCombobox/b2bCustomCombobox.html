@@ -1,0 +1,29 @@
+<template>
+    <div class="slds-form-element slds-form-element_edit slds-form-element_readonly slds-hint-parent">
+        <span class="slds-form-element__label">{selectedLabel}</span>
+        <div class="slds-form-element__control">
+            <div class="slds-form-element__static" onclick={toggleDropdown}>{selectedValue}</div>
+            <button class="slds-button slds-button_icon" onclick={toggleDropdown}>
+                <span class="slds-icon_container slds-icon-utility-edit slds-input__icon slds-input__icon_right">
+                    <lightning-icon icon-name="utility:edit" size="x-small"></lightning-icon>
+                </span>
+            </button>
+            <template lwc:if={isDropdownOpen}>
+                <div id="listbox-id-4" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid" role="listbox" aria-label="Placeholder for Dropdown Items" tabindex="0" aria-busy="false">
+                    <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                        <template for:each={options} for:item="option">
+                            <li key={option.value} role="presentation" class="slds-listbox__item">
+                                <div class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option" onclick={selectOption} data-value={option.value}>
+                                    <span class="slds-media__figure slds-listbox__option-icon"></span>
+                                    <span class="slds-media__body">
+                                        <span class="slds-truncate" title={option.label}>{option.label}</span>
+                                    </span>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>
